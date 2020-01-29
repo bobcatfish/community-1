@@ -2,24 +2,42 @@
 
 The purpose of this document is to aid in the development of Tekton features by evaluating Tekton features against those who will be using them.
 
-When considering requirements and implementation solutions it's useful look at who uses Tekton to have a better understanding of how something should work. The Tekton user profiles describe the different types of users and contributors to Tekton along with the order of priority they have relative to each other. The ordering is because nothing can share the exact same priority and we want to convey that.
+When considering requirements and implementation solutions it's useful look at who uses Tekton to have a better understanding of how something should work. The Tekton user profiles describe the different types of users and contributors to Tekton along with the order of priority they have relative to each other.
 
 ## Preface
 
-* What's described here are user profiles as opposed to [personas](https://en.wikipedia.org/wiki/Persona#In_user_experience_design). Personas are example actors rather than general categories. A single persona can potentially match with multiple user profiles at the same time.
-* Kubernetes Cluster Operators are out of scope for this document. A cluster operator is one who manages the operation of a Kubernetes cluster where applications and pipelines can run.
+What's described here are user profiles as opposed to
+[personas](https://en.wikipedia.org/wiki/Persona#In_user_experience_design).
+Personas are example actors rather than general categories. A single persona
+can potentially match with multiple user profiles at the same time.
 
 ## Profiles
 
-Profiles describe a type of role a user may perform. A real person may perform more than one role and have more than one profile apply to them. How this mapping works between profiles and real people can vary between companies and other organizations. To handle this variation we focus on the user profiles rather than how they may map to people in these different organizations.
+Profiles describe a type of role a user may perform. A real person may perform more than one
+role and have more than one profile apply to them. How this mapping works between profiles
+and real people can vary between companies and other organizations. To handle this variation
+we focus on the user profiles rather than how they may map to people in these different
+organizations.
 
-### 1. Pipeline Operator
+### Platform Team Member
 
-Pipeline operators define, schedule, monitor, and otherwise operate pipelines across one or more Kubernetes clusters. For example, the operation of a set of Kaniko build pipelines and Argo CD pipelines. This is not to be confused with the role of a Kubernetes cluster operator. This is also not to be confused with the application's operator role, who would oversee a product in production.
+Folks on platform teams are trying to create CI/CD solutions that apply across multiple teams
+at their company. They are often responsible for building and choosing tools to do this. They
+may also be responsible for defining standardized `Tasks` and `Pipelines`, and enforcing
+polices related to their execution (e.g. permissions, resource usage limits, code quality
+requirements).
 
-### 2. Pipeline Distributor
+### Pipeline executor
 
-Distributors are people who package application pipelines for someone else to operate. Examples of this would be those who maintain [Tekton's Catalog](https://github.com/tektoncd/catalog) for Kaniko and ArgoCD.
+Pipeline executor are the folks who are actually executing Pipelines and observing their
+progress. They may be executing them manually or they may be creating triggering events, such
+as opening pull requests.
+
+### Task Author
+
+Authors are people who package `Tasks` and `Pipelines` for someone else to [execute]
+
+Examples of this would be those who maintain [Tekton's Catalog](https://github.com/tektoncd/catalog) for Kaniko and ArgoCD.
 
 ### 3. Platform Builder
 
