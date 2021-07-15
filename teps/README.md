@@ -218,3 +218,4 @@ This is the complete list of Tekton teps:
 |[TEP-0070](0070-tekton-catalog-task-platform-support.md) | Platform support in Tekton catalog | proposed | 2021-06-02 |
 |[TEP-0071](0071-custom-task-sdk.md) | Custom Task SDK | proposed | 2021-06-15 |
 |[TEP-0072](0072-results-json-serialized-records.md) | Results: JSON Serialized Records | proposed | 2021-05-11 |
+|[TEP-0076](0076-array-result-types.md) | Array result types | proposed | 2021-07-14 |
